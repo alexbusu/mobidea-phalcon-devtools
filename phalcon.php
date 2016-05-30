@@ -83,6 +83,8 @@ try {
         $script->attach(new $command($script, $eventsManager));
     }
 
+    $script->loadUserScripts();
+
     $script->run();
 } catch (PhalconException $e) {
     fwrite(STDERR, Color::error($e->getMessage()) . PHP_EOL);
